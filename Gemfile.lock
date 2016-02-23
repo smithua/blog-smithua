@@ -9,6 +9,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    autoprefixer-rails (6.2.1)
+      execjs
+      json
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -124,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   github-pages (= 51)
   json
 
