@@ -1,1 +1,1 @@
-# blog-smithua
+# blog.smithua.com
