@@ -1,0 +1,60 @@
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   18px;
+$base-font-weight: 400;
+$base-font-size-responsive:   calc(14px + .2vw + .2vh);
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.56;
+
+$spacing-unit:     2rem;
+
+$selection-color: #FFEB3B;
+
+$text-color:       #2a2a2a;
+$background-color: mix(black, #ffffff, 2%);
+$brand-color:      #2a7ae2;
+
+$footer-color: mix(black, $text-color, 30%);
+
+$grey-color:       #828282;
+$grey-color-light: mix(white, $grey-color, 60%);
+$grey-color-dark:  mix(black, $grey-color, 45%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+$on-desktop:       1024px;
+
+// MEDIA Q
+@mixin media-query-max($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+@mixin media-query-min($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+// Use media queries like this:
+// @include media-query-max($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+
+
+// REM FONT_SIZE
+@function calculateRem($size) {
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
