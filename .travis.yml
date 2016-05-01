@@ -10,6 +10,7 @@ before_script:
 - npm install -g gulp
 
 script:
+- npm install
 - gulp
 - bundle exec jekyll build
 
