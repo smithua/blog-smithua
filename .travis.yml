@@ -9,9 +9,10 @@ cache:
 - bundler
 - apt
 
-install:
-- npm install
+before_script:
+- nvm install node
 - npm install -g gulp
+- npm install
 
 script:
 - gulp
