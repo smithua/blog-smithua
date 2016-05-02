@@ -1,6 +1,6 @@
 ---
-layout: post
-title: Smart css use
+title: "Smart css use"
+date: 2016-04-05
 ---
 
 
