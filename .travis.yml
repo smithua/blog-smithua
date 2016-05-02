@@ -13,6 +13,8 @@ install:
 - rm -rf ~/.nvm
 - git clone https://github.com/creationix/nvm.git ~/.nvm
 - source ~/.nvm/nvm.sh
+- nvm install $NODE_VERSION
+- node --version
 - npm install
 - travis setup npm
 - npm install -g gulp
