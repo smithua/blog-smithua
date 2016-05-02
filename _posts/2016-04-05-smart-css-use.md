@@ -1,6 +1,5 @@
 ---
 title: "Smart css use"
-date: 2016-04-05 15:31:54
 ---
 
 
