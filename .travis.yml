@@ -3,17 +3,13 @@ rvm:
 - 2.2.2
 
 env:
-- TRAVIS_NODE_VERSION="4"
+- TRAVIS_NODE_VERSION="0.12"
 
 cache:
 - bundler
 - apt
 
 install:
-- rm -rf ~/.nvm
-- git clone https://github.com/creationix/nvm.git ~/.nvm
-- source ~/.nvm/nvm.sh
-- nvm install $NODE_VERSION
 - node --version
 - npm install
 - travis setup npm
