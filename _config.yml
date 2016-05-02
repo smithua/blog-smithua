@@ -23,6 +23,8 @@ markdown: kramdown
 # include pages folder
 include: ["_pages"]
 
+exclude: [vendor]
+
 defaults:
   -
     scope:
