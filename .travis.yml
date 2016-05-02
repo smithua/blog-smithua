@@ -10,12 +10,11 @@ cache:
 - apt
 
 install:
-- sudo rm -rf ~/.nvm
+- rm -rf ~/.nvm
 - git clone https://github.com/creationix/nvm.git ~/.nvm
 - source ~/.nvm/nvm.sh
 - nvm install $TRAVIS_NODE_VERSION
 - npm install
-- sudo apt-get update
 - travis setup npm
 - npm install -g gulp
 - npm install
@@ -25,7 +24,7 @@ script:
 - bundle exec jekyll build
 
 
-before_script:
+# before_script:
  # - chmod +x ./script/cibuild # or do this locally and commit
 
 # Assume bundler is being used, therefore
@@ -35,10 +34,10 @@ before_script:
 # branch whitelist, only for GitHub Pages
 branches:
   only:
-  - gh-pages     # test the gh-pages branch
+  - gh-pages # test the gh-pages branch
 
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
-sudo: true # route your build to the container-based infrastructure for a faster build
+sudo: false # route your build to the container-based infrastructure for a faster build
