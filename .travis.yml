@@ -2,11 +2,20 @@ language: ruby
 rvm:
 - 2.2.2
 
-node_js:
-- "0.12"
+env:
+- TRAVIS_NODE_VERSION="0.12"
+
+cache:
+- bundler
+- apt
+
+install:
+- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+- npm install
 
 before_script:
 - sudo apt-get update
+- travis setup npm
 - npm install -g gulp
 - npm install
 
