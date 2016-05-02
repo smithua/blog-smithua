@@ -17,6 +17,13 @@ url: "https://blog.smithua.com" # the base hostname & protocol for your site
 twitter_username: smithua
 github_username:  smithua
 
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+
 # Build settings
 markdown: kramdown
 
