@@ -137,10 +137,8 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    font-size: 18px;
+    background-color: #E0F7FA;
 }
 
 code {
@@ -166,7 +164,10 @@ pre {
 
 .wrapper-home {
   position: relative;
-  top: 1.3vw;
+}
+
+.site-title {
+  display: inherit;
 }
 
 .wrapper-home {
@@ -227,20 +228,19 @@ pre {
   overflow: hidden;
 }
 
-.site-title,
-.home-logo {
+// .home-logo {
+.site-title {
   width: 100%;
 }
 
 .home-logo-main {
+  display: inherit;
   width: 100%;
-  max-width: 500px;
-  margin-left: calc(50% - 250px);
-  margin-bottom: 30px;
+  max-width: 700px;
+  margin: 0 auto;
 
   @include media-query-max($on-palm) {
     max-width: 300px;
-    margin-left: calc(50% - 150px);
   }
 }
 
@@ -297,4 +297,17 @@ body {
 ::selection {
   background: $selection-color;
   color: mix(black, $text-color, 30%);
+}
+
+
+// CLEARFIX
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
 }
