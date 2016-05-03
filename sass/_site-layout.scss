@@ -1,6 +1,5 @@
 body {
   display: flex;
-  flex: 1 0 auto;
   flex-direction: column;
 }
 
@@ -10,7 +9,8 @@ body {
 }
 
 .page-content {
-  flex: 1;
+  flex: 1 0 auto;
+  width: 100%;
 }
 
 // .nav {
