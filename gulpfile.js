@@ -34,9 +34,9 @@ gulp.task('csso', ['sass'], function () {
             debug: true
         }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(cssDestCsso2))
+        .pipe(gulp.dest(cssDest))
         .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest(cssDest));
+        .pipe(gulp.dest(cssDestCsso2));
 });
 
 // BROWSERSYNC
@@ -49,7 +49,7 @@ gulp.task('browser-sync', ['csso'], function() {
 // WATCH
 gulp.task('watch', function () {
     gulp.watch(cssWatchSrc, ['csso']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], browserSync.reload);
+    gulp.watch(['*.html', '_layouts/*.html', '_includes/*', '_posts/*'], browserSync.reload);
 });
 
 // DEFAULT
