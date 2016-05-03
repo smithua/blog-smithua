@@ -4,54 +4,56 @@ var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var postcss      = require('gulp-postcss');
 var sourcemaps   = require('gulp-sourcemaps');
+var browserSync  = require('browser-sync');
 var autoprefixer = require('autoprefixer');
 var csso         = require('gulp-csso');
-var runSequence  = require('run-sequence');
-runSequence = require('run-sequence').use(gulp);
 
 
 // VARIABLES
 var cssSrc = './sass/main.scss';
 var cssDest = './css';
-var cssDestCsso = './css/main.css';
+var cssSrcCsso = './css/main.css';
+var cssDestCsso2 = './_site/css';
+var cssWatchSrc = './sass/*.scss';
 
 
-// TASKS
+// SASS
 gulp.task('sass', function () {
-  return gulp.src(cssSrc)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer({ browsers: ['last 1 versions'], cascade: false }) ]))
-    .pipe(gulp.dest(cssDest));
+    return gulp.src(cssSrc)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss([ autoprefixer({ browsers: ['last 1 versions'], cascade: false }) ]))
+        .pipe(gulp.dest(cssDest));
 });
 
-
 // CSSO
-gulp.task('csso', function () {
-    return gulp.src(cssDestCsso)
+gulp.task('csso', ['sass'], function () {
+    return gulp.src(cssSrcCsso)
         .pipe(sourcemaps.init())
         .pipe(csso({
             sourceMap: true,
             debug: true
         }))
         .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(cssDestCsso2))
+        .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest(cssDest));
 });
 
-gulp.task('default', function () {
-    runSequence('sass', 'csso');
+// BROWSERSYNC
+gulp.task('browser-sync', ['csso'], function() {
+    browserSync({
+        proxy: '127.0.0.1:4000'
+    });
 });
 
-// gulp.task('development', function () {
-//     return gulp.src('./main.css')
-//         .pipe(csso({
-//             restructure: false,
-//             sourceMap: true,
-//             debug: true
-//         }))
-//         .pipe(gulp.dest('./out'));
-// });
+// WATCH
+gulp.task('watch', function () {
+    gulp.watch(cssWatchSrc, ['csso']);
+    gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], browserSync.reload);
+});
 
+// DEFAULT
+gulp.task('default', ['browser-sync', 'watch']);
 
-// gulp.task('sass:watch', function () {
-//   gulp.watch(cssSrc, ['sass']);
-// });
+// PRODUCTION
+gulp.task('production', ['csso']);
