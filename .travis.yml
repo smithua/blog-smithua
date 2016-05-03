@@ -15,7 +15,7 @@ before_install:
 - npm install
 
 script:
-- gulp
+- gulp production
 - bundle exec jekyll build
 
 # branch whitelist, only for GitHub Pages
