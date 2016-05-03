@@ -166,22 +166,25 @@ pre {
 
 .wrapper-home {
   position: relative;
-  top: 117px;
+  top: 1.3vw;
 }
 
 .wrapper-home {
-  width: 54vw;
+  width: 100%;
   padding-right: $spacing-unit / 2;
   padding-left: $spacing-unit / 2;
   margin-right: auto;
   margin-left: auto;
   @extend %clearfix;
 
+  @include media-query-max($on-mobile) {
+    max-width: calc(400px - (#{$spacing-unit} * 2));
+  }
+  @include media-query-min($on-palm) {
+    max-width: calc(600px - (#{$spacing-unit} * 2));
+  }
   @include media-query-min($on-desktop) {
-    width: 84vw;
     max-width: calc(1080px - (#{$spacing-unit} * 2));
-    // padding-right: $spacing-unit;
-    // padding-left: $spacing-unit;
   }
 }
 
@@ -221,14 +224,24 @@ pre {
  * Site header
  */
 .site-header-home {
-  padding-top: 7vh;
-  border-bottom: 20px solid #fafafa;
   overflow: hidden;
 }
 
 .site-title,
 .home-logo {
   width: 100%;
+}
+
+.home-logo-main {
+  width: 100%;
+  max-width: 500px;
+  margin-left: calc(50% - 250px);
+  margin-bottom: 30px;
+
+  @include media-query-max($on-palm) {
+    max-width: 300px;
+    margin-left: calc(50% - 150px);
+  }
 }
 
 

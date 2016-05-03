@@ -3,6 +3,7 @@
  */
 .site-header {
     min-height: 56px;
+    padding-top: 3vw;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -102,7 +103,7 @@
 
 .footer-copyright {
   margin: 0;
-  color: #f9f9f9;
+  color: #EEEEEE;
   @include fontSize(14px);
 }
 
@@ -131,7 +132,7 @@
 }
 
 .footer-col-1 {
-    width:         calc(35% - (#{$spacing-unit} / 2));
+    width:         calc(80% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
