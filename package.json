@@ -1,15 +1,21 @@
 {
   "name": "smithua-blog",
+  "version": "0.0.1",
   "description": "Based on Jekyll 3 starter theme",
+  "main": "gulpfile.js",
   "author": "Aleksandr Fesenko",
   "homepage": "https://blog.smithua.com/",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/smithua/blog-smithua.git"
+    "url": "https://github.com/smithua/blog-smithua.git"
   },
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smithua/blog-smithua/issues"
+  },
   "dependencies": {
     "autoprefixer": "^6.3.3",
+    "browser-sync": "^2.12.5",
     "gulp": "^3.9.1",
     "gulp-csso": "^2.0.0",
     "gulp-postcss": "^6.1.0",
