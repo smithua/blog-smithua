@@ -2,11 +2,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, user-scalable=1" />
   <title>{% if page.title %}{{ page.title }}{% else %}Home - {{ site.title }} - Front-End Developer{% endif %}</title>
-
   <meta name="language" content="en">
   <meta name="description" content="{{ site.description }}">
   <meta name="keywords" content="front-end developer, HTML5, CSS3, Ukraine">
-
   {% if page.url != "/404" %}
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   {% endif %}
@@ -15,4 +13,13 @@
   <link href="//twitter.com/smithua" rel="author">
   <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="shortcut icon" type="image/x-icon" />
   <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ['Fira+Sans:400,300,700:latin,cyrillic']
+      },
+      timeout: 0
+    });
+  </script>
 </head>
