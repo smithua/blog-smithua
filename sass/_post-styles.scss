@@ -11,6 +11,7 @@
     font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
+    font-weight: 700;
 
     @include media-query-max($on-laptop) {
         font-size: 36px;
@@ -18,7 +19,9 @@
 }
 
 .post-content {
-    margin-bottom: $spacing-unit;
+    // margin-top: $spacing-unit;
+    // margin-bottom: $spacing-unit;
+    padding: $spacing-unit 0;
 
     h2 {
         font-size: 32px;
@@ -43,11 +46,4 @@
             font-size: 18px;
         }
     }
-}
-
-// Posts first letter
-.post-content::first-letter {
-  color: #0097A7;
-  font-size: 300%;
-  font-weight: 400;
 }
