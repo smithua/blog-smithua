@@ -239,7 +239,7 @@ pre {
   margin: 0 auto;
 
   @include media-query-max($on-palm) {
-    max-width: 250px;
+    max-height: 220px;
   }
 }
 
