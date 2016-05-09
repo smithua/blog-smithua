@@ -9,6 +9,11 @@
   padding-top: 3em;
   padding-bottom: 1em;
 
+  @include media-query-max($on-palm) {
+    padding-top: 1em;
+    padding-bottom: 0em;
+  }
+
   // Positioning context for the mobile navigation icon
   position: relative;
 }
