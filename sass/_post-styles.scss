@@ -12,10 +12,21 @@
     letter-spacing: -1px;
     line-height: 1;
     font-weight: 700;
+    position: relative;
 
     @include media-query-max($on-laptop) {
         font-size: 36px;
     }
+}
+
+.post .post-title:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2em;
+  background: #ffeb3b;
+  height: 3px;
 }
 
 .post-content {
